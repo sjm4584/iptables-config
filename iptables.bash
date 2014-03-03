@@ -38,7 +38,7 @@ blockInputPort() {
   echo "Blocking port $1 from $2"
   #blocks a specific IP addr ($2) from accessing port $1
   #iptables -I INPUT -s $2 -j DROP
-  iptables -A INPUT -p tcp -s $2 --dport 80 -j DROP
+  iptables -A INPUT -p tcp -s $2 --dport $1 -j DROP
 }
 
 blockInputAllPort() {
